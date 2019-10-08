@@ -1,5 +1,4 @@
-This repository includes matlab code, scripts, and datasets necessary for reproducing results presented in our KDD submission.
-Data for the property tax experiments could not be provided, as the data requires a legal aggreement with Zillow to access.
+This repository includes matlab code, scripts, and datasets necessary for reproducing results presented in our AIStats submission.
 The simulation code used to create out datasets is also provided.
 
 
@@ -38,7 +37,16 @@ Example use:
 PlotAUCResults("Simulation_Results_Paper/",5000,[3,5,10],1000,[10,30,50,70,90],"Norm","Normal Distribution Results")
 
 
-***Reproducing eBird Analysis from 4.3***
+***Reproducing Climate Data Analysis from 4.4***
+climateQsnap.m will load the climate data (assumed to be stored locally as ClimateData1v7.mat) and run all three algorithms on it.
+The value for tau may be specified.
+
+Example use:
+R = climateQsnap(.1); %Summary results only
+[R,q_ids,t_ids,m_ids,SAQ,SAT,SAM] = climateQsnap(.1); %Includes location ids of all significant areas found.
+
+
+***Reproducing eBird Analysis from 4.4***
 ebird_migrate.m will run our migration search on the ebird data subset provided, and save the intermediate regions found.
 We used the parameters tau = 0.9 and sz = 28 for our experiments.
 compile_migration_results.m will combine the intermediate results into a single csv file.
